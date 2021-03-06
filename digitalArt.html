@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Digital Art</title>
+<link href="digitalArtStyle.css" rel="stylesheet" type="text/css">
+</head>
+<audio id="congrats">
+	<source src="Audio/cheer.wav">	
+</audio>
+<audio id="water">
+	<source src="Audio/water.wav">	
+</audio>
+<body>
+	
+	<div class="sidenav">
+		<a href="https://www.youtube.com/watch?v=H8hdKnr7rpE"> <img class="university" src="Images/university.png" alt=""/> </a>
+		<a href="index.html"><img src="Images/dashboardRed.png" onmouseover="this.src='Images/dashboardWhite.png';" onmouseout="this.src='Images/dashboardRed.png';" alt=""/></a>
+		<img src="Images/bookRed.png" onmouseover="this.src='Images/bookWhite.png';" onmouseout="this.src='Images/bookRed.png';" alt=""/>
+		<img src="Images/calendarRed.png" onmouseover="this.src='Images/calendarWhite.png';" onmouseout="this.src='Images/calendarRed.png';" alt=""/>
+		<img src="Images/mailRed.png" onmouseover="this.src='Images/mailWhite.png';" onmouseout="this.src='Images/mailRed.png';" alt=""/>
+		<img src="Images/timeRed.png" onmouseover="this.src='Images/timeWhite.png';" onmouseout="this.src='Images/timeRed.png';" alt=""/>
+		<img src="Images/helpRed.png" onmouseover="this.src='Images/helpWhite.png';" onmouseout="this.src='Images/helpRed.png';" alt=""/>
+	</div>
+	<div class="main">
+		<h1> SP21: DIGITAL ART: SURVEY &amp; PRACTICE </h1>
+		<hr>
+		<p>Project 2 is due! Click the button to turn in your assignment.</p>
+		<p id="doIt"><strong>Just turn it in!</strong> What's the issue?</p>
+		<img id="shia" src="Images/justDoIt.gif" alt=""/>
+		<!-- <p id="suggestHelp">If you're really struggling, maybe try the help tab?</p> -->
+		<p id="success"> <strong>Assignment turned in successfully!</strong></p>
+		<img id="celebration" src="Images/celebration.gif" alt=""/>
+		<button id="turnIn" onmouseover="move()" onclick="turnedIn()">Turn in Assignment</button>
+		
+	</div>
+	</body>
+	<script>
+	var moveCount = 0;
+	var celebrated = false;
+	var myAudio = document.getElementById("congrats");
+	function playCelebration() {
+		myAudio.play();
+	}
+	function turnedIn() {
+		playCelebration();
+		celebrated = true;
+		document.getElementById("celebration").style.opacity = 1;
+		document.getElementById("success").style.opacity = 1;
+		document.getElementById("doIt").style.opacity = 0;
+		document.getElementById("shia").style.opacity = 0;
+		//document.getElementById("suggestHelp").style.opacity = 0;
+	}
+	function move() {
+		var newLeft = 100 + Math.random() * window.innerWidth;
+		while (newLeft > window.innerWidth) {
+			newLeft -= 100;
+		}
+		var newTop = -100 + Math.random() * window.innerHeight;
+		while (newTop > window.innerHeight) {
+			newTop -= 100;
+		}
+		document.getElementById('turnIn').style.left = newLeft + "px";
+		document.getElementById('turnIn').style.top = newTop + "px";
+		if (!celebrated) {
+			moveCount += 1;
+		}
+		if (moveCount >= 15) {
+			document.getElementById("doIt").style.opacity = 1;
+		}
+		if (moveCount >= 30) {
+			document.getElementById("shia").style.opacity = 1;
+		}
+		/*
+		if (moveCount >= 30) {
+			document.getElementById("suggestHelp").style.opacity = 1;
+		}
+		*/
+	}
+	
+	</script>
+</html>
