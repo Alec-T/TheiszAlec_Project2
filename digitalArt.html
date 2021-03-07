@@ -20,7 +20,7 @@
 		<img src="Images/calendarRed.png" onmouseover="this.src='Images/calendarWhite.png';" onmouseout="this.src='Images/calendarRed.png';" alt=""/>
 		<img src="Images/mailRed.png" onmouseover="this.src='Images/mailWhite.png';" onmouseout="this.src='Images/mailRed.png';" alt=""/>
 		<img src="Images/timeRed.png" onmouseover="this.src='Images/timeWhite.png';" onmouseout="this.src='Images/timeRed.png';" alt=""/>
-		<img src="Images/helpRed.png" onmouseover="this.src='Images/helpWhite.png';" onmouseout="this.src='Images/helpRed.png';" alt=""/>
+		<a href="help.html"><img src="Images/helpRed.png" onmouseover="this.src='Images/helpWhite.png';" onmouseout="this.src='Images/helpRed.png';" alt=""/></a>
 	</div>
 	<div class="main">
 		<h1> SP21: DIGITAL ART: SURVEY &amp; PRACTICE </h1>
@@ -28,7 +28,7 @@
 		<p>Project 2 is due! Click the button to turn in your assignment.</p>
 		<p id="doIt"><strong>Just turn it in!</strong> What's the issue?</p>
 		<img id="shia" src="Images/justDoIt.gif" alt=""/>
-		<!-- <p id="suggestHelp">If you're really struggling, maybe try the help tab?</p> -->
+		<p id="suggestHelp">If you're really struggling, maybe try the help tab?</p>
 		<p id="success"> <strong>Assignment turned in successfully!</strong></p>
 		<img id="celebration" src="Images/celebration.gif" alt=""/>
 		<button id="turnIn" onmouseover="move()" onclick="turnedIn()">Turn in Assignment</button>
@@ -49,7 +49,7 @@
 		document.getElementById("success").style.opacity = 1;
 		document.getElementById("doIt").style.opacity = 0;
 		document.getElementById("shia").style.opacity = 0;
-		//document.getElementById("suggestHelp").style.opacity = 0;
+		document.getElementById("suggestHelp").style.opacity = 0;
 	}
 	function move() {
 		var newLeft = 100 + Math.random() * window.innerWidth;
@@ -65,17 +65,16 @@
 		if (!celebrated) {
 			moveCount += 1;
 		}
-		if (moveCount >= 15) {
+		if (moveCount >= 10) {
 			document.getElementById("doIt").style.opacity = 1;
 		}
-		if (moveCount >= 30) {
+		if (moveCount >= 20) {
 			document.getElementById("shia").style.opacity = 1;
 		}
-		/*
 		if (moveCount >= 30) {
 			document.getElementById("suggestHelp").style.opacity = 1;
 		}
-		*/
+		
 	}
 	
 	</script>
